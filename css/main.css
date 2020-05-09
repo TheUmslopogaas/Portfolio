@@ -1,0 +1,712 @@
+/* Global Style
+*****************/
+@import url('https://fonts.googleapis.com/css?family=Asap:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap');
+@font-face{src: url(../fonts/dosis/dosis-semibold.ttf);font-family: dosb;}
+@font-face{src: url(../fonts/alegreya/alegreyasans-light.ttf); font-family: alegl;}
+@font-face{src: url(../fonts/alegreya/alegreyasans-regular.ttf); font-family: alegr;}
+@font-face{src: url(../fonts/barlow/barlowcondensed-light.ttf); font-family: barlow;}
+
+/* Scroll Nad Selection Styling
+*****************************/
+::selection {
+  color: rgb(21, 21, 21);  
+  background-color: #ffe100;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #3c4046;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #3c4046;
+} 
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #eece1a;
+}
+/* Global Styling
+******************/
+* {margin: 0;  padding: 0;} *:focus {outline: none;}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: alegl;
+  color: #fff;
+  background-color: #3c4046;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.primary-header {
+  font-family: Asap;
+  font-size: 4rem;
+  font-weight: 500;
+  margin: .5rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+}
+.primary-header div {
+  display: inline-block;
+  position: relative;
+}
+.primary-header div::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  height: 6px;
+  width: 20%;
+  background-color: #eece1a;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.primary-header div:hover:after {
+  width: 8%;
+}
+.secondary-header {
+  font-family: alegl;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 1rem 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/*******************************************************
+Menu Button Style
+********************************************************/
+
+.menu-btn {
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  transition: .4s ease-out;
+  z-index: 3;
+  /* overflow: hidden; */
+}
+.single-btn-line:nth-child(1), .single-btn-line:nth-child(3){
+  margin: 0 auto 8px auto;
+  width: 32px;
+}
+.menu-btn:hover .single-btn-line:nth-child(1){
+  transform: translate3d(0,-4px,0);
+}
+.menu-btn:hover .single-btn-line:nth-child(3){
+  transform: translate3d(0,4px,0);
+}
+.single-btn-line {
+  width: 40px;
+  height: 2px;
+  background-color: #dbdbdb;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  transition: .4s ease-out;
+  transition-timing-function: cubic-bezier(.43,.77,.15,1.5);
+}
+.rotate-button {
+  transform: rotate(180deg);
+}
+.menu-btn.rotate-button .single-btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(11px, 9px);
+  background-color: #eece1a;
+}
+.menu-btn.rotate-button .single-btn-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.rotate-button .single-btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -3px);
+  background-color: #eece1a;
+}
+/*******************************************************
+Navbar Style
+********************************************************/
+.nav {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  transition: 0.3s ease-in;
+  opacity: 0;
+  z-index: 2;
+  transform: scale(0.9) translateX(20%);
+}
+.nav-content-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 55, 69, 0.98);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.nav-ul {
+  /* background-color: rgba(51, 55, 69, 0.95); */
+  letter-spacing: 10px;
+}
+.nav.show{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+.nav-link {
+  color: #fff;
+  font-size: 50px;
+  padding: 2rem 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline-block;
+  transition: 0.3s;
+}
+.nav-item:hover .nav-link{
+  color: #eece1a;
+}
+.nav-item a::after {
+	content: "";
+	height: 4px;
+	position: relative;
+  left: 50%;
+  width: 50px;
+  transform: translateX(-50%);
+	background-color: #eece1a;
+  display: block;
+  opacity: 0;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+.nav-item a:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+.nav-link.active {
+  color: #eece1a;
+}
+
+/*******************************************************
+Home Style
+********************************************************/
+
+.home {
+  height: 100vh;
+  background-attachment: fixed;
+  border-bottom: 3px solid #eece1a;
+  position: relative;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(to bottom right, rgba(51, 60, 68, 0.5), rgba(56, 62, 65, 0.85)); */
+  background: linear-gradient(to bottom right, rgba(33, 38, 43, 0.5), rgba(23, 26, 28, 0.8));
+  z-index: -1;
+}
+.home .container {
+  display: flex;
+}
+.hero-header {
+  font-family: Asap;
+  font-size: 6rem;
+  font-weight: 500;
+  cursor: default;
+  margin: .5rem 0 1rem 0;
+}
+.hero-header span{
+  position: relative;
+  color: #eece1a;
+  display: inline-block;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+}
+.hero-secondary-header {text-align: left;}
+.home-content-wrapper {
+  padding-top: 20vh;
+  flex-basis: 70%;
+}
+.howdy {
+  font-family: Asap;
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+.social-icon {
+  display: flex;
+}
+.btn-hover {
+  position: relative;
+  margin: 0 15px 0 0;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: hsla(0, 0%, 100%, 0.05);
+  border-radius: 50%;
+  transition: .6s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icon img {
+  width: 22px;
+  height: 22px;
+  transition: 0.2s;
+}
+.btn-hover#social-fb:hover {background-color: rgba(0,0,0,0);}
+.btn-hover#social-tw:hover {background-color: rgba(0,0,0,0);}
+.btn-hover#social-li:hover {background-color: rgba(0,0,0,0);}
+.btn-hover#social-gh:hover {background-color: rgba(0,0,0,0);}
+.btn-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  transition: 0.6s;
+  border-radius: 0 0 50% 50%;
+}
+.btn-hover#social-fb::before{background: #3b5998;}
+.btn-hover#social-tw::before{background: #00acee;}
+.btn-hover#social-li::before{background: #0e76a8;}
+.btn-hover#social-gh::before{background: #24292E;}
+.btn-hover:hover::before {height: 180%;}
+.show {visibility: visible;}
+.downArrow {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.downArrow a {
+  padding: 20px;
+}
+.downArrow img {
+  position: static;
+  margin: 0;
+  line-height: normal;
+  color: white;
+  width: 40px;
+}
+/* this class just toggles by JS */
+.home-down-arrow {
+  animation-duration: 1s;
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+.home .container .hero-header span:hover .nickname{
+  transform: scale(1);
+  opacity: 1;
+  top: -20px;
+}
+.nickname {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  background-color: #EEE8D5;
+  border: 1px dashed black;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  transform: scale(0.95);
+  font-size: 12px;
+  /* transform: ; */
+  opacity: 0;
+  transition: 0.2s ease-out;
+}
+
+/*******************************************************
+About Style
+********************************************************/
+
+.about {
+  background-color: #3c4046;
+  padding-bottom: 70px;
+}
+.about .primary-header {margin-top: 10vh;}
+.about-description {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+}
+.about-my-image-wrapper {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  /* background-color: rgba(54, 104, 124, 0.555); */
+}
+.about-my-image-wrapper .my-image {
+  background: url(../imgs/portrait-me.jpg) center/cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: 4px solid #eece1a;
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.my-img-hover {
+  background-color: rgba(46, 117, 114, 0.473);
+  position: relative;
+}
+.lets-talk-wrapper {
+  position: absolute;
+  top: -20px;
+  right: -70px;
+  transition: 0.3s;
+  transform: scale(0) rotate(15deg);
+}
+.lets-talk-img {
+  display: inline-block;
+  width: 100px;
+  right: 0;
+  top: 0;
+}
+.lets-talk {
+  display: inline-block;
+  font-weight: bold;
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  color: black;
+}
+.about-my-image-wrapper .my-image:hover {
+  box-shadow: 2px 7px 10px 2px rgba(0,0,0,0.3);
+  transform: translate(0px, -2px);
+}
+.about-my-image-wrapper .my-image:hover .lets-talk-wrapper {
+  transform: scale(1) rotate(15deg);
+}
+.about-des-texts {
+  flex: 6;
+  /* background-color: rgba(131, 84, 143, 0.397); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+}
+.about-description p.secondary-header {
+  background: none;
+  line-height: 1.6;
+  /* font-size: 1.4rem; */
+}
+.about-description p.about-des-head {
+  font-family: Asap;
+  color: #eece1a;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+/*******************************************************
+My Work Style
+********************************************************/
+.mywork .primary-header {margin-top: 10vh;}
+.mywork-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-gap: 20px; */
+}
+.mywork-card {
+  overflow: hidden;
+  display: block;
+}
+.mywork-img-wrapper {
+  /* display: block; */
+  overflow: hidden;
+  position: relative;
+  height: 320px;
+}
+.mywork-img-wrapper .project-description {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  margin-top: 2rem;
+  font-family: Asap;
+  text-align: center;
+  transition: 0.4s;
+  z-index: 1;
+}
+.project-description h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: 100;
+}
+.project-description h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+.project-description div {
+  display: flex;
+  justify-content: center;
+} 
+.project-description .btn-hover {
+  width: 100px;
+  border-radius: 0px;
+  margin: 40px auto 0 auto;
+  visibility: hidden;
+  opacity: 0;
+  font-family: alegl;
+  border: 2px solid rgba(70, 70, 70, 0.686);
+}
+.project-description .btn-hover:hover {
+  color: #24292E;
+  font-family: alegr;
+  border: 2px solid #313131af;
+}
+.project-description .btn-hover:hover::before {
+  background-color: #eece1a;
+}
+.mywork-img-wrapper:hover .project-description{
+  bottom: 40px;
+}
+.mywork-img-wrapper:hover .btn-hover {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 20px;
+}
+.mywork-img-wrapper .img{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: 0.4s ease-out;
+}
+.mywork-img-wrapper:hover .img{
+  transform: scale(1.1);
+}
+.mywork-img-wrapper .img::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(31, 32, 36, 0.75);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+.mywork-img-wrapper:hover .img::after {
+  background-color: rgba(31, 32, 36, 0.9);
+}
+.mywork-img-wrapper .img > * {
+  color: #3b5998;
+  padding: 20px;
+}
+.mywork-img-wrapper .img1 {background: url(../imgs/mywork\ \(1\).jpg) center/cover;}
+.mywork-img-wrapper .img2 {background: url(../imgs/mywork\ \(2\).jpg) center/cover;}
+.mywork-img-wrapper .img3 {background: url(../imgs/mywork\ \(3\).jpg) center/cover;}
+.mywork-img-wrapper .img4 {background: url(../imgs/mywork\ \(4\).jpg) center/cover;}
+.mywork-img-wrapper .img5 {background: url(../imgs/mywork\ \(5\).jpg) center/cover;}
+
+/*******************************************************
+Footer Style
+********************************************************/
+
+footer {
+  text-align: center;
+  width: 100%;
+  background-color: rgb(34, 34, 34);
+  padding: 25px 0;
+  margin-top: 30px;
+  border-top: 3px solid #eece1a;
+}
+
+/*******************************************************
+About Carousel
+********************************************************/
+
+.owl-carousel {
+  margin: 2rem 0 0 0;
+}
+.item {
+  padding: 10px 20px;
+  margin: 5px;
+  border-bottom: 3px solid #eece1a;
+  background-color: rgb(80, 80, 80);
+  background-color: #3e4347;
+  position: relative;
+}
+.fas {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  font-size: 1.5rem;
+  line-height: 50px; /*this line is just for making the icon vertically centered*/
+  margin-top: -25px; /*this line is for making the icon vertically centered too*/
+  color: #eece1a;
+}
+.card-texts {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 30px;
+  margin-left: 50px;
+}
+.item .card-texts .description {
+  font-family: barlow;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+.item .card-texts h2 {
+  padding: 10px 0 3px 0;
+  font-size: 1.3rem;
+}
+.item .card-texts .profession {
+  font-size: 0.8rem;
+}
+
+/*******************************************************
+Owl Carousel Dots
+********************************************************/
+
+.owl-theme .owl-dots {
+  margin-top: 40px!important;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 15px;
+  height: 5px;
+  margin: 5px 4px;
+  background: #fff;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: all .2s ease;
+  border-radius: 5px;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+  width: 30px;
+  background-color: #eece1a;
+}
+.owl-theme .owl-dots .owl-dot:hover span {background: #eece1a;}
+
+
+
+@media (min-width: 1300px) {
+  .mywork-card-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .nav-link {
+    font-size: 26px;
+    letter-spacing: 8px;
+  }
+  .home .container .hero-header span:hover .nickname{
+    transform: scale(0); opacity: 0; display: none; visibility: hidden;
+  }
+}
+@media (max-width: 750px) {
+  .home .container {display: block;}
+  .hero-header {
+    text-align: center;
+    font-size: 5rem;
+  }
+  .howdy {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .nav-ul {letter-spacing: 6px;}
+  .primary-header {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .secondary-header {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .social-icon {
+    text-align: center;
+    justify-content: center;
+  }
+  .about-card-wrapper {flex-direction: column;}
+  .about-description {flex-direction: column;}
+  .about-my-image-wrapper .my-image {
+    margin: 0 auto;
+    width: 210px;
+    height: 210px;
+  }
+  .lets-talk-img {
+    width: 70px;
+  }
+  .lets-talk {
+    font-size: .85rem;
+    top: 25%;
+    right: 15%;
+  }
+  .mywork-card-wrapper {grid-template-columns: repeat(2, 1fr);}
+  .item .card-texts .description {
+    line-height: 1.5  ;
+    font-size: 1rem;
+  }
+  .item .card-texts h2 {
+    padding: 8px 0 2px 0;
+    font-size: 1.2rem;
+  }
+  .item .card-texts .profession {font-size: 0.7rem;}
+  .card-texts {
+    padding-left: 15px;
+    margin-left: 40px;
+  }
+  .fas {
+    left: 20px;
+    font-size: 1.5rem;
+    line-height: 50px; /*this line is just for making the icon vertically centered*/
+    margin-top: -25px; /*this line is for making the icon vertically centered too*/
+    color: #eece1a;
+  }
+}
+@media (max-width: 430px) {
+  .primary-header {font-size: 3.7rem;}
+  .secondary-header {font-size: 1.1rem;}
+  .hero-header {font-size: 4rem;}
+  .menu-btn {
+    top: 20px;
+    right: 20px;
+  }
+  .single-btn-line {width: 26px;}
+  .nav-link {
+    font-size: 22px;
+    padding: 1.1rem 0.8rem;
+  }
+  .about-my-image-wrapper .my-image {
+    width: 180px;
+    height: 180px;
+    border: 3px solid #eece1a;
+  }
+  .lets-talk-wrapper {display: none;}
+  .about-description p.secondary-header { line-height: 1.8;}
+  .mywork-card-wrapper {grid-template-columns: 1fr;}
+  .container {width: 80%;}
+  .nav-ul {letter-spacing: 4px;}
+}
+@media (max-width: 320px) {
+  .about-my-image-wrapper .my-image {
+    width: 130px;
+    height: 130px;
+    border: 2px solid #eece1a;
+  }
+  .container {width: 95%;}
+  .nav-ul {letter-spacing: 0 px;}
+  .nav-link {font-size: 16px;}
+}
