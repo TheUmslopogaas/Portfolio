@@ -46,5 +46,6 @@ $('.owl-carousel').owlCarousel({
 document.addEventListener("DOMContentLoaded", function(){
   setInterval(function(){
     downArrow.classList.toggle("home-down-arrow");
-  }, 2000);
+  }, 1500);
 });
+

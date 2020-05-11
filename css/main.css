@@ -1,5 +1,3 @@
-/* Global Style
-*****************/
 @import url('https://fonts.googleapis.com/css?family=Asap:400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap');
 @font-face{src: url(../fonts/dosis/dosis-semibold.ttf);font-family: dosb;}
@@ -7,7 +5,7 @@
 @font-face{src: url(../fonts/alegreya/alegreyasans-regular.ttf); font-family: alegr;}
 @font-face{src: url(../fonts/barlow/barlowcondensed-light.ttf); font-family: barlow;}
 
-/* Scroll Nad Selection Styling
+/* Scroll And Selection Styling
 *****************************/
 ::selection {
   color: rgb(21, 21, 21);  
@@ -37,7 +35,8 @@ body {
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-family: alegl;
   color: #fff;
-  background-color: #3c4046;
+  /* background-color: #3c4046; */
+  background-color: #33373d;
 }
 .container {
   width: 90%;
@@ -219,7 +218,7 @@ Home Style
   height: 100%;
   width: 100%;
   /* background: linear-gradient(to bottom right, rgba(51, 60, 68, 0.5), rgba(56, 62, 65, 0.85)); */
-  background: linear-gradient(to bottom right, rgba(33, 38, 43, 0.5), rgba(23, 26, 28, 0.8));
+  /* background: linear-gradient(to bottom right, rgba(33, 38, 43, 0.5), rgba(23, 26, 28, 0.8)); */
   z-index: -1;
 }
 .home .container {
@@ -243,7 +242,7 @@ Home Style
 .hero-secondary-header {text-align: left;}
 .home-content-wrapper {
   padding-top: 20vh;
-  flex-basis: 70%;
+  flex-basis: 60%;
 }
 .howdy {
   font-family: Asap;
@@ -272,10 +271,16 @@ Home Style
   height: 22px;
   transition: 0.2s;
 }
+#social-cv {
+  width: 80px;
+  border-radius: 100px;
+  font-family: Asap;
+}
 .btn-hover#social-fb:hover {background-color: rgba(0,0,0,0);}
 .btn-hover#social-tw:hover {background-color: rgba(0,0,0,0);}
 .btn-hover#social-li:hover {background-color: rgba(0,0,0,0);}
 .btn-hover#social-gh:hover {background-color: rgba(0,0,0,0);}
+.btn-hover#social-cv:hover {background-color: rgba(0,0,0,0);}
 .btn-hover::before {
   content: "";
   position: absolute;
@@ -291,6 +296,7 @@ Home Style
 .btn-hover#social-tw::before{background: #00acee;}
 .btn-hover#social-li::before{background: #0e76a8;}
 .btn-hover#social-gh::before{background: #24292E;}
+.btn-hover#social-cv::before{background: #3e4347;}
 .btn-hover:hover::before {height: 180%;}
 .show {visibility: visible;}
 .downArrow {
@@ -303,16 +309,17 @@ Home Style
 .downArrow a {
   padding: 20px;
 }
-.downArrow img {
+.downArrow i {
   position: static;
   margin: 0;
   line-height: normal;
   color: white;
-  width: 40px;
+  width: 0px;
+  font-size: 30px;
 }
 /* this class just toggles by JS */
 .home-down-arrow {
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-name: bounce;
   transform-origin: center bottom;
 }
@@ -342,7 +349,7 @@ About Style
 ********************************************************/
 
 .about {
-  background-color: #3c4046;
+  /* background-color: #3c4046; */
   padding-bottom: 70px;
 }
 .about .primary-header {margin-top: 10vh;}
@@ -394,7 +401,7 @@ About Style
 }
 .about-my-image-wrapper .my-image:hover {
   box-shadow: 2px 7px 10px 2px rgba(0,0,0,0.3);
-  transform: translate(0px, -2px);
+  transform: translate(0px, -3px);
 }
 .about-my-image-wrapper .my-image:hover .lets-talk-wrapper {
   transform: scale(1) rotate(15deg);
@@ -465,7 +472,7 @@ My Work Style
 .project-description .btn-hover {
   width: 100px;
   border-radius: 0px;
-  margin: 40px auto 0 auto;
+  margin: 30px auto 0 auto;
   visibility: hidden;
   opacity: 0;
   font-family: alegl;
@@ -513,11 +520,13 @@ My Work Style
   color: #3b5998;
   padding: 20px;
 }
-.mywork-img-wrapper .img1 {background: url(../imgs/mywork\ \(1\).jpg) center/cover;}
-.mywork-img-wrapper .img2 {background: url(../imgs/mywork\ \(2\).jpg) center/cover;}
-.mywork-img-wrapper .img3 {background: url(../imgs/mywork\ \(3\).jpg) center/cover;}
-.mywork-img-wrapper .img4 {background: url(../imgs/mywork\ \(4\).jpg) center/cover;}
-.mywork-img-wrapper .img5 {background: url(../imgs/mywork\ \(5\).jpg) center/cover;}
+.mywork-img-wrapper .img1 {background: url(../imgs/cuda.jpg) center/cover;}
+.mywork-img-wrapper .img2 {background: url(../imgs/bootstrap.jpg) center/cover;}
+.mywork-img-wrapper .img3 {background: url(../imgs/form.jpg) center/cover;}
+.mywork-img-wrapper .img4 {background: url(../imgs/project5.jpg) center/cover;}
+.mywork-img-wrapper .img5 {background: url(../imgs/grow.jpg) center/cover;}
+.mywork-img-wrapper .img6 {background: url(../imgs/project3.jpg) center/cover;}
+.mywork-img-wrapper .img7 {background: url(../imgs/img7.JPG) center/cover;}
 
 /*******************************************************
 Footer Style
@@ -543,7 +552,6 @@ About Carousel
   padding: 10px 20px;
   margin: 5px;
   border-bottom: 3px solid #eece1a;
-  background-color: rgb(80, 80, 80);
   background-color: #3e4347;
   position: relative;
 }
@@ -598,7 +606,9 @@ Owl Carousel Dots
 }
 .owl-theme .owl-dots .owl-dot:hover span {background: #eece1a;}
 
-
+/*******************************************************
+Responsive CSS
+********************************************************/
 
 @media (min-width: 1300px) {
   .mywork-card-wrapper {
@@ -609,6 +619,9 @@ Owl Carousel Dots
   .nav-link {
     font-size: 26px;
     letter-spacing: 8px;
+  }
+  .hero-header {
+    font-size: 5.3rem;
   }
   .home .container .hero-header span:hover .nickname{
     transform: scale(0); opacity: 0; display: none; visibility: hidden;
@@ -641,6 +654,9 @@ Owl Carousel Dots
   }
   .about-card-wrapper {flex-direction: column;}
   .about-description {flex-direction: column;}
+  .about-des-texts {
+    padding-left: 0px;
+  }
   .about-my-image-wrapper .my-image {
     margin: 0 auto;
     width: 210px;
