@@ -32,10 +32,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-family: alegl;
   color: #fff;
-  /* background-color: #3c4046; */
   background-color: #33373d;
 }
 .container {
@@ -98,7 +96,6 @@ Menu Button Style
   cursor: pointer;
   transition: .4s ease-out;
   z-index: 3;
-  /* overflow: hidden; */
 }
 .single-btn-line:nth-child(1), .single-btn-line:nth-child(3){
   margin: 0 auto 8px auto;
@@ -158,7 +155,6 @@ Navbar Style
   text-align: center;
 }
 .nav-ul {
-  /* background-color: rgba(51, 55, 69, 0.95); */
   letter-spacing: 10px;
 }
 .nav.show{
@@ -218,7 +214,6 @@ Home Style
   height: 100%;
   width: 100%;
   /* background: linear-gradient(to bottom right, rgba(51, 60, 68, 0.5), rgba(56, 62, 65, 0.85)); */
-  /* background: linear-gradient(to bottom right, rgba(33, 38, 43, 0.5), rgba(23, 26, 28, 0.8)); */
   z-index: -1;
 }
 .home .container {
@@ -307,7 +302,7 @@ Home Style
   justify-content: center;
 }
 .downArrow a {
-  padding: 20px;
+  /* padding: 20px; */
 }
 .downArrow i {
   position: static;
@@ -339,7 +334,6 @@ Home Style
   color: black;
   transform: scale(0.95);
   font-size: 12px;
-  /* transform: ; */
   opacity: 0;
   transition: 0.2s ease-out;
 }
@@ -349,7 +343,6 @@ About Style
 ********************************************************/
 
 .about {
-  /* background-color: #3c4046; */
   padding-bottom: 70px;
 }
 .about .primary-header {margin-top: 10vh;}
@@ -362,7 +355,6 @@ About Style
   flex: 3;
   display: flex;
   justify-content: center;
-  /* background-color: rgba(54, 104, 124, 0.555); */
 }
 .about-my-image-wrapper .my-image {
   background: url(../imgs/portrait-me.jpg) center/cover;
@@ -408,7 +400,6 @@ About Style
 }
 .about-des-texts {
   flex: 6;
-  /* background-color: rgba(131, 84, 143, 0.397); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -417,7 +408,6 @@ About Style
 .about-description p.secondary-header {
   background: none;
   line-height: 1.6;
-  /* font-size: 1.4rem; */
 }
 .about-description p.about-des-head {
   font-family: Asap;
@@ -434,14 +424,12 @@ My Work Style
 .mywork-card-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-gap: 20px; */
 }
 .mywork-card {
   overflow: hidden;
   display: block;
 }
 .mywork-img-wrapper {
-  /* display: block; */
   overflow: hidden;
   position: relative;
   height: 320px;
